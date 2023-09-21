@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        .menu
+    {
+        float: left;
+        font-size: 30px;
+        background-color: slateblue;
+        padding: 10px;
+        margin: 0px 0.5px;
+        color: white;
+        cursor: pointer;
+    }
+    a
+    {
+        text-decoration: none;
+        color: white;
+    }
+    a:hover{
+        color: chartreuse;
+    }
+    #row
+    {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+</head>
+<body>
+
+    <div id='row' class="container">
+        <div class="menu"><a href="Detaling.html">Display Inqueries</a></div>
+        <div class="menu"><a href="Appro.html">Approved</a></div>
+        <div class="menu"><a href="Today'sss.html">Show Today's</a></div>
+        <div class="menu"><a href="index.html">LogOut</a></div>
+    </div>
+    <div class="container">
+        <h1 style="text-align: center;">Customer Personal Information</h1>
+        <hr><br>
+        <input type="text" class="form-control" id="Search" style="width: 50%; display: inline;" onkeyup="Search()" placeholder="Search for Phone Number">
+        <br>
+        <br>
+        <table class="table">
+            <thead>
+                <th>S.No.</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Address</th>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+<br>
+<br>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyDt_Fj3J-kixtXeTj3cKNLulyuDDPDKWys",
+  authDomain: "insurance-f28df.firebaseapp.com",
+  projectId: "insurance-f28df",
+  storageBucket: "insurance-f28df.appspot.com",
+  messagingSenderId: "838660135539",
+  appId: "1:838660135539:web:8ac502243554407e492806"
+        };
+        
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        Transfer()
+        function Transfer()
+        {   
+            firebase.database().ref("/Inquiry/").on("value",function(snap)
+        {
+            Obj=snap.val()
+          Object.keys(Obj).map(function(key)
+          {
+            var obj={
+             Name:Obj[key].Name,
+             Phone:Obj[key].Phone,
+             Email:Obj[key].Email,
+             Address:Obj[key].Address,   
+            }
+            firebase.database().ref("/Fetch/"+key).set(obj)
+          })
+        })
+
+        setTimeout(function(){
+              Show()
+                }, 500)
+        }
+    
+        function Show()
+        {
+            document.getElementById("tbody").innerHTML=""
+            firebase.database().ref("/Fetch/").on("value",function(snap)
+            {
+                Obj=snap.val()
+                if(Obj==null)
+                {
+                    alert("No Details found")
+                    window.location.href="DisplayContact.html"
+                }
+                else
+                {
+                    Allkey=Object.keys(Obj)
+                Allkey.map(function(key,index)
+                {
+                    Table(index,Obj[key].Name,Obj[key].Phone,Obj[key].Email,Obj[key].Address)
+                })
+                }
+                
+            })
+        }
+        function Table(index,name,phone,email,address)
+        {
+            row=document.createElement("tr")
+            cell1=document.createElement("td")
+            cell2=document.createElement("td")
+            cell3=document.createElement("td")
+            cell4=document.createElement("td")
+            cell5=document.createElement("td")
+
+
+            cell1.innerHTML=index+1
+            cell2.innerHTML=name
+            cell3.innerHTML=phone
+            cell4.innerHTML=email
+            cell5.innerHTML=address
+
+            row.append(cell1)
+            row.append(cell2)
+            row.append(cell3)
+            row.append(cell4)
+            row.append(cell5)
+            document.getElementById("tbody").append(row)
+        }
+        function Search()
+        {
+           search= document.getElementById("Search").value
+           document.getElementById("tbody").innerHTML=""
+           firebase.database().ref("/Fetch/").on("value",function(snap)
+            {
+                Obj=snap.val()
+                if(Obj==null)
+                {
+                   alert("No data found")
+                }
+                else
+                {
+                if(search=="")
+                {
+                 Show()  
+                }
+                else
+                {
+                    KeyArr=Object.keys(Obj)
+                    KeyArr.map(function(key,index)
+                    {
+                        if(Obj[key].Phone.match(search))
+                        {
+                            Table(index,Obj[key].Name,Obj[key].Phone,Obj[key].Email,Obj[key].Address);
+                        }  
+                    })
+                }   
+                }
+                    })
+                
+            }
+          
+                  
+                
+        
+    </script>
+</body>
+</html>
