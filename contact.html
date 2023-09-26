@@ -291,6 +291,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 		if((username=="Ansh" && password=="Ansh296" ) || (username=="Sudhir" && password=="Sudhir099") )
          {
           window.location.href="Detaling.html"
+		  document.getElementById("User").value=""
+		  document.getElementById("Pass").value=""
          }
        else
         {
@@ -318,7 +320,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 					<label style="font-weight: bold;" for="Username">Phone Number:</label>
 					<input type="number" id="Phone" placeholder="Enter your Phone Number" required>
 					<label for="Email" style="font-weight: bold;">Email:</label>
-					<input type="text" id="Email" placeholder="Enter your Email"  required>
+					<input type="email" id="Email" placeholder="Enter your Email"  required>
 					<label for="Address" style="font-weight: bold;" >Address:</label>
 					<input type="text" id="Address" placeholder="Enter your Address" required>
 					<label for="Type" style="font-weight: bold;">Which type of service do you want??</label>
@@ -327,6 +329,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 						<option>Life Insurance</option>
 						<option>Health Insurance</option>
 						<option>Motor Insurance</option>
+						<option>Other</option>
 					</select>
 					<label id="i" for="Rc" style="font-weight: bold;">Registration Certificate:</label>
 					<input id="Rc" type="text" placeholder="Enter your Vehicle RC Number">
@@ -390,7 +393,9 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
             var email = document.getElementById("Email").value
             var type = document.getElementById("select").value
             var rc = "---------"
-			if(type!="None")
+			if(name!="" && phone!="")
+			{
+				if(type!="None")
 			{
 				if (type == "Motor Insurance") {
                     rc = document.getElementById("Rc").value
@@ -427,8 +432,12 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 				alert("Field is Empty")
 				return
 			}
+			}
+			else
+			{
+				alert("Field is Empty")
+			}
 			
-
 				}
 				function Clear() {
             document.getElementById("Name").value = ""
@@ -577,7 +586,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 												<span class="elementor-icon-list-icon">
 							<i aria-hidden="true" class="fas fa-map-marker-alt"></i>						</span>
-										<span class="elementor-icon-list-text">Chaman Medicos,Mata Darwaja Chowk,Rohtak-124001</span>
+										<span style="color: #00d084;" class="elementor-icon-list-text">Chaman Medicos,Mata Darwaja Chowk,Rohtak-124001</span>
 											</a>
 									</li>
 								<li class="elementor-icon-list-item">
@@ -585,7 +594,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 												<span class="elementor-icon-list-icon">
 							<i aria-hidden="true" class="fas fa-phone-alt"></i>						</span>
-										<span class="elementor-icon-list-text">+91 92554 33099</span>
+										<span style="color: #00d084;" class="elementor-icon-list-text">+91 92554 33099</span>
 											</a>
 									</li>
 								<li class="elementor-icon-list-item">
@@ -593,15 +602,15 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 												<span class="elementor-icon-list-icon">
 							<i aria-hidden="true" class="fas fa-envelope"></i>						</span>
-										<span class="elementor-icon-list-text">A2ZSolutionsRTK@gmail.com</span>
+										<span style="color: #00d084;" class="elementor-icon-list-text">A2ZSolutionsRTK@gmail.com</span>
 											</a>
 									</li>
 								<li class="elementor-icon-list-item">
-											<a href="#">
+											<a href="https://api.whatsapp.com/send/?phone=%2B919255433099&text=Hello%2C+I+want+insurance+from+your+A2Z+Solutions&type=phone_number&app_absent=0">
 
 												<span class="elementor-icon-list-icon">
-							<i aria-hidden="true" class="fas fa-clock"></i>						</span>
-										<span class="elementor-icon-list-text">Mon - Sat : 9:00 am - 6:00 pm</span>
+													<i style="font-size: 20px;" class="fa fa-whatsapp" aria-hidden="true"></i>						</span>
+										<span style="color: #00d084;" class="elementor-icon-list-text">+91 92554 33099</span>
 											</a>
 									</li>
 						</ul>

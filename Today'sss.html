@@ -45,6 +45,7 @@
         <br>
         <table class="table">
             <thead>
+                <th>S.No</th>
                 <th>Name</th>
                 <th>Phone Number</th>
                 <th>Email</th>
@@ -86,8 +87,10 @@ var firebaseConfig = {
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         Show()
+        var index=0;
         function Show()
         {
+            document.getElementById("tbody").innerHTML=""
             var d=new Date()
             dd=d.getDate()
             mm=d.getMonth()
@@ -96,7 +99,7 @@ var firebaseConfig = {
             {
                 Obj=snap.val()
                 Allkey=Object.keys(Obj)
-                Allkey.map(function(key)
+                Allkey.reverse().map(function(key)
                 {
                     timing=Obj[key].Timing
                     arr=timing.split("&")
@@ -117,7 +120,9 @@ var firebaseConfig = {
         }
         function Table(name,phone,email,address,type,timing,rc)
         {
+            index=index+1
             var row= document.createElement("tr")
+            var cell= document.createElement("td")
                var cell1= document.createElement("td")
                var cell2= document.createElement("td")
                var cell3= document.createElement("td")
@@ -127,7 +132,7 @@ var firebaseConfig = {
                var cell7= document.createElement("td")
                var cell8= document.createElement("td")
 
-
+            cell.innerHTML=index
                cell1.innerHTML=name
                cell2.innerHTML=phone
                cell3.innerHTML=email
@@ -136,7 +141,7 @@ var firebaseConfig = {
                cell6.innerHTML=timing
                cell7.innerHTML=rc
   
-
+               row.append(cell)
                 row.append(cell1)
                 row.append(cell2)
                 row.append(cell3)

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="container" style="height: 200px; width: 400px;"><img height="100%" width="100%" src="wp-content/uploads/sites/360/2023/03/logo-insurify.png" alt=""></div>
+    <div class="container">
+    <form>
+        <label>Invoice No.</label>
+        <input type="text" class="form-control" placeholder="Enter Invoice No." id="Invoice"><br>
+        <label>Company</label>
+        <input type="text" class="form-control" placeholder="Enter Company Name." id="Company"><br>
+        <label>Description</label>
+        <input type="text" class="form-control" placeholder="Enter Description" id="Description"><br>
+        <label>Price</label>
+        <input type="text" class="form-control" placeholder="Enter Price" id="Price"><br>
+        <button type="button" class="btn btn-success" onclick="Add()">Add</button>
+    </form>
+    </div>
+    <script>
+        function Add()
+        {
+            invoice=document.getElementById("Invoice").value
+            company=document.getElementById("Company").value
+            description=document.getElementById("Description").value
+            price=document.getElementById("Price").value
+
+            var Obj={
+                Invoice:invoice,
+                Company:company,
+                Description:description,
+                Price:price,
+            }
+
+            localStorage.setItem("Data",JSON.stringify(Obj))
+            window.location.href="general_3.html"
+        }
+    </script>
+</body>
+</html>

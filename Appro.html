@@ -30,6 +30,22 @@
         display: flex;
         justify-content: center;
     }
+    img
+    {
+        height: 100%;
+        width: 100%;
+    }
+    #image
+    {
+        height: 150px;
+        width: 300px;
+    }
+    #btns
+    {
+        position: absolute;
+        left: 42%;
+        top: 17%;
+    }
     </style>
 </head>
 <body>
@@ -39,12 +55,18 @@
         <div class="menu"><a href="Today'sss.html">Show Today's</a></div>
         <div class="menu"><a href="index.html">LogOut</a></div>
     </div>
-    <div class="container">
-        <h1 style="text-align: center;">Approved Customer Data</h1>
+    <div id="btns">
+        <button class="btn btn-success" onclick="Download()">Download Pdf</button>
+        <button class="btn btn-success" onclick="ExportToExcel()">Export to Excel</button>
+    </div>
+    <div id="table" class="container">
+        <div id="image">
+            <img src="wp-content/uploads/sites/360/2023/03/logo-insurify.png" alt="">
+        </div>
+        <h1 style="text-align: right; color: darkblue; font-weight: 600; margin-top: -8%;">Our Customers</h1>
         <hr>
-        <br>
 
-        <table class="table">
+        <table id="table1" class="table">
             <thead>
                 <th>S.No</th>
                 <th>Name</th>
@@ -61,6 +83,8 @@
             </tbody>
         </table>
     </div>
+    <script src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
 
@@ -102,14 +126,14 @@
                     else
                     {
                     KeyArr=Object.keys(Obj)
-                    KeyArr.map(function(key,index)
+                    KeyArr.reverse().map(function(key,index)
                     {
-                        Table(index,Obj[key].Name,Obj[key].Phone,Obj[key].Email,Obj[key].Address,Obj[key].Timing,Obj[key].Type,Obj[key].Rc);
+                        Table(index,Obj[key].Name,Obj[key].Phone,Obj[key].Email,Obj[key].Address,Obj[key].Timing,Obj[key].Type,Obj[key].Rc,key);
                     })
                     }
                 })
             }
-            function Table(index,name,phone,email,address,timing,type,rc)
+            function Table(index,name,phone,email,address,timing,type,rc,key)
             {
                var row= document.createElement("tr")
                var cell1= document.createElement("td")
@@ -120,6 +144,7 @@
                var cell6= document.createElement("td")
                var cell7= document.createElement("td")
                var cell8= document.createElement("td")
+               var cell9= document.createElement("td")
 
 
                cell1.innerHTML=index+1
@@ -133,7 +158,12 @@
                
 
 
-
+                gen=document.createElement("button")
+                gen.innerHTML="Generate"
+                gen.className="btn btn-success"
+                gen.id=key
+                gen.setAttribute("onclick","Generate(this)")
+                cell9.append(gen)
                
 
                 
@@ -147,8 +177,34 @@
                 row.append(cell6)
                 row.append(cell7)
                 row.append(cell8)
+                row.append(cell9)
                document.getElementById("tbody").append(row)
             }
-    </script>
+            function Generate(Obutton)
+            {
+                localStorage.setItem("Key",JSON.stringify(Obutton.id))
+                window.location.href="Invice.html"
+            }
+            function Download()
+        {
+            table=document.getElementById("table")
+            console.log(window);
+            var opt = {
+                margin: 0.5,
+                filename: 'table.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 1},
+                jsPDF: { unit: 'in', format: 'legal', orientation: 'landscape' }
+            };
+           html2pdf().from(table).set(opt).save()
+        }
+        function ExportToExcel(type, fn, dl) {
+       var elt = document.getElementById('table1');
+       var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+       return dl ?
+         XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }):
+         XLSX.writeFile(wb, fn || ('MySheetName.' + (type || 'xlsx')));
+    }
+   </script>
 </body>
 </html>

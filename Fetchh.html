@@ -30,6 +30,40 @@
         display: flex;
         justify-content: center;
     }
+    #image
+    {
+        height: 200px;
+        width: 450px;
+        margin-left: 27%;
+    }
+    img
+    {
+        height: 100%;
+        width: 100%;
+    }
+    #h3
+    {
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 700;
+        color:darkblue;
+        margin-top: -30px;
+    }
+    #h4
+    {
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 700;
+        color:darkblue;
+        margin-top: -8px;
+    }
+    #h5
+    {
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 700;
+        color:darkblue;
+        margin-top: -70px;
+        text-align: right;
+    }
+
     </style>
 </head>
 <body>
@@ -40,19 +74,26 @@
         <div class="menu"><a href="Today'sss.html">Show Today's</a></div>
         <div class="menu"><a href="index.html">LogOut</a></div>
     </div>
-    <div class="container">
-        <h1 style="text-align: center;">Customer Personal Information</h1>
-        <hr><br>
-        <input type="text" class="form-control" id="Search" style="width: 50%; display: inline;" onkeyup="Search()" placeholder="Search for Phone Number">
-        <br>
-        <br>
-        <table class="table">
+    <div class="container" style="position: relative; top: 60px;">
+        <button onclick="Download()" class="btn btn-success">Download Pdf</button>
+        <button  onclick="ExportToExcel('xlsx')" class="btn btn-success">Export to Excel</button>
+    </div>
+    <div id="table" class="container">
+        <div id="image"><img src="wp-content/uploads/sites/360/2023/03/logo-insurify.png" alt=""></div>
+        <h3 id="h3">Sudhir Bhayana (Insurance Advisor)</h3>
+        <h3 id="h4">+91 92554 33099</h3>
+        <h3 id="h5">Chaman Medicos, <br>Mata Darwaja Chowk,<br>Rohtak-124001</h3>
+        <hr>    
+        <table id="table1" class="table">
             <thead>
                 <th>S.No.</th>
                 <th>Name</th>
                 <th>Phone Number</th>
                 <th>Email</th>
                 <th>Address</th>
+                <th>Insurance Type</th>
+                <th>Registration Certificate <br>(Optional)</th>
+                <th>Date</th>
             </thead>
             <tbody id="tbody">
 
@@ -61,6 +102,8 @@
 <br>
 <br>
     </div>
+    <script src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
 
@@ -99,7 +142,10 @@
              Name:Obj[key].Name,
              Phone:Obj[key].Phone,
              Email:Obj[key].Email,
-             Address:Obj[key].Address,   
+             Address:Obj[key].Address,
+             Type:Obj[key].Type,
+             Rc:Obj[key].Rc,
+             Timing:Obj[key].Timing
             }
             firebase.database().ref("/Fetch/"+key).set(obj)
           })
@@ -119,20 +165,20 @@
                 if(Obj==null)
                 {
                     alert("No Details found")
-                    window.location.href="DisplayContact.html"
+                    window.location.href="Detaling.html"
                 }
                 else
                 {
                     Allkey=Object.keys(Obj)
-                Allkey.map(function(key,index)
+                Allkey.reverse().map(function(key,index)
                 {
-                    Table(index,Obj[key].Name,Obj[key].Phone,Obj[key].Email,Obj[key].Address)
+                    Table(index,Obj[key].Name,Obj[key].Phone,Obj[key].Email,Obj[key].Address,Obj[key].Type,Obj[key].Rc,Obj[key].Timing)
                 })
                 }
                 
             })
         }
-        function Table(index,name,phone,email,address)
+        function Table(index,name,phone,email,address,type,rc,timing)
         {
             row=document.createElement("tr")
             cell1=document.createElement("td")
@@ -140,6 +186,9 @@
             cell3=document.createElement("td")
             cell4=document.createElement("td")
             cell5=document.createElement("td")
+            cell6=document.createElement("td")
+            cell7=document.createElement("td")
+            cell8=document.createElement("td")
 
 
             cell1.innerHTML=index+1
@@ -147,46 +196,77 @@
             cell3.innerHTML=phone
             cell4.innerHTML=email
             cell5.innerHTML=address
+            cell6.innerHTML=type
+            cell7.innerHTML=rc
+
+            date=timing.split("&")
+            cell8.innerHTML=date[0]
+
 
             row.append(cell1)
             row.append(cell2)
             row.append(cell3)
             row.append(cell4)
             row.append(cell5)
+            row.append(cell6)
+            row.append(cell7)
+            row.append(cell8)
             document.getElementById("tbody").append(row)
         }
-        function Search()
+        function Download()
         {
-           search= document.getElementById("Search").value
-           document.getElementById("tbody").innerHTML=""
-           firebase.database().ref("/Fetch/").on("value",function(snap)
-            {
-                Obj=snap.val()
-                if(Obj==null)
-                {
-                   alert("No data found")
-                }
-                else
-                {
-                if(search=="")
-                {
-                 Show()  
-                }
-                else
-                {
-                    KeyArr=Object.keys(Obj)
-                    KeyArr.map(function(key,index)
-                    {
-                        if(Obj[key].Phone.match(search))
-                        {
-                            Table(index,Obj[key].Name,Obj[key].Phone,Obj[key].Email,Obj[key].Address);
-                        }  
-                    })
-                }   
-                }
-                    })
+            table=document.getElementById("table")
+            console.log(window);
+            var opt = {
+                margin: 0.5,
+                filename: 'table.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 1},
+                jsPDF: { unit: 'in', format: 'legal', orientation: 'landscape' }
+            };
+           html2pdf().from(table).set(opt).save()
+        }
+       
+        function ExportToExcel(type, fn, dl) {
+       var elt = document.getElementById('table1');
+       var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+       return dl ?
+         XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }):
+         XLSX.writeFile(wb, fn || ('MySheetName.' + (type || 'xlsx')));
+    }
+      
+        // function Search()
+        // {
+        //    search= document.getElementById("Search").value
+        //    document.getElementById("tbody").innerHTML=""
+        //    firebase.database().ref("/Fetch/").on("value",function(snap)
+        //     {
+        //         Obj=snap.val()
+        //         if(Obj==null)
+        //         {
+        //            alert("No data found")
+        //         }
+        //         else
+        //         {
+        //         if(search=="")
+        //         {
+        //          Show()  
+        //         }
+        //         else
+        //         {
+        //             KeyArr=Object.keys(Obj)
+        //             KeyArr.map(function(key,index)
+        //             {
+        //                 if(Obj[key].Phone.match(search))
+        //                 {
+        //                     Table(index,Obj[key].Name,Obj[key].Phone,Obj[key].Email,Obj[key].Address);
+        //                 }  
+        //             })
+        //         }   
+        //         }
+        //             })
                 
-            }
+        //     }
           
                   
                 
