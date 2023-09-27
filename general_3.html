@@ -23,7 +23,7 @@
         <div class="tm_invoice_in">
           <div class="tm_invoice_head tm_top_head tm_mb15 tm_align_center">
             <div class="tm_invoice_left">
-              <div class="tm_logo"><img style="max-height: 100px; height: 100px; width: 250px;" src="wp-content/uploads/sites/360/2023/03/logo-insurify.png" alt="Logo"></div>
+              <div class="tm_logo"><img style="max-height: 150px; height: 150px; width: 250px;" src="wp-content/uploads/sites/360/2023/03/logo-insurify.png" alt="Logo"></div>
             </div>
             <div class="tm_invoice_right tm_text_right tm_mobile_hide">
               <div class="tm_f50 tm_text_uppercase tm_white_color">Invoice</div>
@@ -64,16 +64,16 @@
                       <th class="tm_width_3 tm_semi_bold tm_white_color">Company </th>
                       <th class="tm_width_4 tm_semi_bold tm_white_color">Description</th>
                       <th class="tm_width_2 tm_semi_bold tm_white_color">Insurance Type</th>
-                      <th class="tm_width_1 tm_semi_bold tm_white_color">Date</th>
+                      <!-- <th class="tm_width_1 tm_semi_bold tm_white_color">Date</th> -->
                       <th class="tm_width_2 tm_semi_bold tm_white_color tm_text_right">Price</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody >
                     <tr>
                       <td class="tm_width_3" id="company"></td>
                       <td class="tm_width_4" id="description"></td>
                       <td class="tm_width_2" id="type"></td>
-                      <td class="tm_width_1" id="date"></td>
+                       <!-- <td class="tm_width_1" id="date"></td>  -->
                       <td class="tm_width_2 tm_text_right" id="price"></td>
                     </tr>
                    
@@ -165,25 +165,39 @@
     function Show()
     {
       key=JSON.parse(localStorage.getItem("Key"))
-      firebase.database().ref("/Customer/").on("value",function(snap){
-        Obj=snap.val()
-        d=Obj[key].Timing
-        date=d.split("&")
+      obj=JSON.parse(localStorage.getItem("Data"))
+      firebase.database().ref("/Customer/").on("value",function(Snap){
+        Obj=Snap.val()
        var datee=new Date()
         document.getElementById("i").innerHTML=`${datee.getDate()}/${datee.getMonth()+1}/${datee.getFullYear()}`
-        document.getElementById("date").innerHTML=date[0]
         document.getElementById("ii").innerHTML=`${Obj[key].Name}<br>${Obj[key].Phone}<br>${Obj[key].Email}<br>${Obj[key].Address}`
-      document.getElementById("type").innerHTML=Obj[key].Type
+        if(Obj[key].Rc=="---------")
+        {
+          document.getElementById("description").innerHTML=`${obj.Description}`
+        }
+        else
+        {
+          document.getElementById("description").innerHTML=`${obj.Description}--${Obj[key].Rc} `
+        }
+
+        if(Obj[key].Type=="Other")
+        {
+          document.getElementById("type").innerHTML=`${Obj[key].Type} (${obj.Name})`
+        }
+        else
+        {
+          document.getElementById("type").innerHTML=Obj[key].Type
+        }
       })
-      obj=JSON.parse(localStorage.getItem("Data"))
-      document.getElementById("price").innerHTML=`₹ ${obj.Price}`
-      document.getElementById("pricee").innerHTML=`₹ ${obj.Price}`
-      document.getElementById("priceee").innerHTML=`₹ ${obj.Price}`
-      document.getElementById("company").innerHTML=obj.Company
-      document.getElementById("description").innerHTML=obj.Description
       document.getElementById("invoice").innerHTML=`#${obj.Invoice}`
+      document.getElementById("company").innerHTML=obj.Company
+      document.getElementById("price").innerHTML=`₹${obj.Price}`
+      document.getElementById("priceee").innerHTML=`₹${obj.Price}`
+      document.getElementById("pricee").innerHTML=`₹${obj.Price}`
+      
+      
     }
-  </script>
+   </script>
 </body>
 
 <!-- Mirrored from invoma.vercel.app/general_3.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jul 2023 07:08:31 GMT -->

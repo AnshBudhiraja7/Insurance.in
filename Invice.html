@@ -7,39 +7,68 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-    
-    <div class="container" style="height: 200px; width: 400px;"><img height="100%" width="100%" src="wp-content/uploads/sites/360/2023/03/logo-insurify.png" alt=""></div>
-    <div class="container">
-    <form>
-        <label>Invoice No.</label>
-        <input type="text" class="form-control" placeholder="Enter Invoice No." id="Invoice"><br>
-        <label>Company</label>
-        <input type="text" class="form-control" placeholder="Enter Company Name." id="Company"><br>
-        <label>Description</label>
-        <input type="text" class="form-control" placeholder="Enter Description" id="Description"><br>
-        <label>Price</label>
-        <input type="text" class="form-control" placeholder="Enter Price" id="Price"><br>
-        <button type="button" class="btn btn-success" onclick="Add()">Add</button>
-    </form>
+    <div style="height: 200px; width: 400px;" class="container">
+        <img height="100%" width="100%" src="wp-content/uploads/sites/360/2023/03/logo-insurify.png" alt="">
     </div>
+    <div class="container">
+        <label>Invoice No:</label>
+        <input type="text" class="form-control" id="Invoice" placeholder="Enter Invoice No."><br>
+        <label>Company</label>
+        <input type="text" class="form-control" id="Company" placeholder="Enter Company"><br>
+        <label>Description</label>
+        <input type="text" class="form-control" id="Description" placeholder="Enter Description"><br>
+        <label>Price</label>
+        <input type="text" class="form-control" id="Price" placeholder="Enter Price"><br>
+        <select id="select" class="form-control" style="width: 30%;" onchange="Select()">
+            <option>None</option>
+            <option>Life Insurance</option>
+            <option>Health Insurance</option>
+            <option>Motor Insurance</option>
+            <option>Other</option>
+        </select><br>
+        <span style="display: none;" id="TypeName">
+            <label>Insurance Type:</label>
+            <input type="text" class="form-control" id="Name" placeholder="Enter Insurance Type">
+        </span><br>
+        <button class="btn btn-success" onclick="Generate()">Generate Invoice</button>
+    </div>
+
     <script>
-        function Add()
+        function Select()
         {
-            invoice=document.getElementById("Invoice").value
-            company=document.getElementById("Company").value
-            description=document.getElementById("Description").value
-            price=document.getElementById("Price").value
-
-            var Obj={
-                Invoice:invoice,
-                Company:company,
-                Description:description,
-                Price:price,
-            }
-
-            localStorage.setItem("Data",JSON.stringify(Obj))
-            window.location.href="general_3.html"
+           select= document.getElementById("select").value
+           if(select=="Other")
+           {
+            document.getElementById("TypeName").style.display="block"
+           }
+           else
+           {
+            document.getElementById("TypeName").style.display="none"
+           }
         }
-    </script>
+        function Generate()
+        {
+           invoice= document.getElementById("Invoice").value
+           company= document.getElementById("Company").value
+           description= document.getElementById("Description").value
+           price= document.getElementById("Price").value
+           name=document.getElementById("Name").value
+
+           var Obj={
+            Invoice:invoice,
+            Company:company,
+            Description:description,
+            Price:price,
+            Name:name,
+           }
+
+           localStorage.setItem("Data",JSON.stringify(Obj))
+
+
+           document.getElementById("TypeName").style.display="none"
+           window.location.href="general_3.html"
+        }
+        </script>
+    
 </body>
 </html>
