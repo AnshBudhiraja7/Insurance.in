@@ -165,7 +165,9 @@
     function Show()
     {
       key=JSON.parse(localStorage.getItem("Key"))
-      obj=JSON.parse(localStorage.getItem("Data"))
+      firebase.database().ref("/Generate/").on("value",function(snap){
+        obj=snap.val()
+      
       firebase.database().ref("/Customer/").on("value",function(Snap){
         Obj=Snap.val()
        var datee=new Date()
@@ -195,7 +197,7 @@
       document.getElementById("priceee").innerHTML=`₹${obj.Price}`
       document.getElementById("pricee").innerHTML=`₹${obj.Price}`
       
-      
+    })
     }
    </script>
 </body>

@@ -179,9 +179,11 @@
                 row.append(cell8)
                 row.append(cell9)
                document.getElementById("tbody").append(row)
+               localStorage.clear()
             }
             function Generate(Obutton)
             {
+                // localStorage.clear()
                 localStorage.setItem("Key",JSON.stringify(Obutton.id))
                 window.location.href="Invice.html"
             }
