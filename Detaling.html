@@ -44,8 +44,8 @@ a:hover{
     <div class="container">
         <h1 style="text-align: center;">Inqueries</h1>
         <hr><br>
-        <input type="number" class="form-control" id="Search" style="width: 40%; display: inline;" onkeyup="Search()"
-            placeholder="Search by Phone Number">
+        <input type="text" class="form-control" id="Search" style="width: 40%; display: inline;" onkeyup="Search()"
+            placeholder="Search by Phone Number or Name">
         <select class="form-control" style="width: 15%; display: inline;" onchange="Filter()" id="filter">
             <option>All</option>
             <option>Last Month</option>
@@ -63,7 +63,7 @@ a:hover{
         <br>
         <br>
         <br>
-        <table class="table">
+        <table class="table table-bordered table-hover table-striped table-condensed">
             <thead>
                 <th>S.No.</th>
                 <th>Name</th>
@@ -198,7 +198,7 @@ a:hover{
             firebase.database().ref("/Customer/").on("value", function (Snap) {
                 Obj = Snap.val()
                 if (Obj == null) {
-                    alert("No Inquery Approved")
+                    console.log("No Inquery Approved")
                 }
                 else {
                     key = Object.keys(Obj)
@@ -253,7 +253,7 @@ a:hover{
                         document.getElementById("tbody").innerHTML = ""
                         KeyArr = Object.keys(Obj)
                         KeyArr.reverse().map(function (key, index) {
-                            if (Obj[key].Phone.match(Search)) {
+                            if (Obj[key].Phone.match(Search) || Obj[key].Name.match(Search)) {
                                 Table(index, Obj[key].Name, Obj[key].Phone, Obj[key].Email, Obj[key].Address, Obj[key].Timing, Obj[key].Type, Obj[key].Rc);
                             }
 
