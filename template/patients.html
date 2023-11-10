@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from preclinic.dreamstechnologies.com/template/patients.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Oct 2023 15:17:15 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/A2Z-removebg-preview.png">
+    <title>A2Z Solutions - Insurance Advisor</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+	<!-- Datatables CSS -->
+	<link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css">
+	<!-- Feathericon CSS -->
+	<link rel="stylesheet" href="assets/plugins/feather/feather.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+     
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="header">
+			<div class="header-left">
+				<a href="index.html" class="logo">
+					<img src="../wp-content/uploads/sites/360/2023/03/logo-insurify.png" id="Logo" width="170" height="80" alt="">
+				</a>
+			</div>
+			<a id="toggle_btn" href="javascript:void(0);" onclick="Logo()"><img src="assets/img/icons/bar-icon.svg"  alt=""></a>
+            <a id="mobile_btn" class="mobile_btn float-start" href="#sidebar"><img src="assets/img/icons/bar-icon.svg"  alt=""></a>
+			<div class="top-nav-search mob-view">
+				<form>
+					<input type="text" class="form-control" placeholder="Search here">
+					<a class="btn" ><img src="assets/img/icons/search-normal.svg" alt=""></a>
+				</form>
+			</div>
+            <ul class="nav user-menu float-end">
+                <li class="nav-item dropdown d-none d-md-block">
+                    <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown"><img src="assets/img/icons/note-icon-02.svg" alt=""><span class="pulse"></span> </a>
+                    <div class="dropdown-menu notifications">
+                        <div class="topnav-dropdown-header">
+                            <span>Notifications</span>
+                        </div>
+                        <div class="drop-scroll">
+                            <!-- <ul class="notification-list">
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media">
+											<span class="avatar">
+												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid">
+											</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
+												<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media">
+											<span class="avatar">V</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
+												<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media">
+											<span class="avatar">L</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
+												<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media">
+											<span class="avatar">G</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
+												<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media">
+											<span class="avatar">V</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span class="noti-title">Private chat module</span></p>
+												<p class="noti-time"><span class="notification-time">2 days ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul> -->
+                        </div>
+                        <div class="topnav-dropdown-footer">
+                            <a href="#">View all Notifications</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown d-none d-md-block">
+                    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><img src="assets/img/icons/note-icon-01.svg" alt=""><span class="pulse"></span> </a>
+                </li>
+				<li class="nav-item dropdown has-arrow user-profile-list">
+                    <a href="#" class="dropdown-toggle nav-link user-link" data-bs-toggle="dropdown">
+						<div class="user-names">
+							<h5>Sudhir Bhayana</h5>
+                        	<span>Admin</span>
+						</div>
+						<span class="user-img">
+							<img  src="../wp-content/uploads/sites/360/2023/03/Advisor.jpg"  alt="Admin">
+						</span>
+                    </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="profile.html">My Profile</a>
+						<a class="dropdown-item" href="javascript:alert('You are not allowed to Edit. Please Contact to Developer')">Edit Profile</a>
+						<!-- <a class="dropdown-item" href="edit-profile.html">Edit Profile</a> -->
+						<a class="dropdown-item" href="javascript:alert('Website is under progress. Contact to developer')">Settings</a>
+						<!-- <a class="dropdown-item" href="settings.html">Settings</a> -->
+						<a class="dropdown-item" href="../index.html">Logout</a>
+					</div>
+                </li>
+				<li class="nav-item ">
+					<a href="javascript:alert('Website is under progress. Contact to developer')" class="hasnotifications nav-link"><img src="assets/img/icons/setting-icon-01.svg" alt=""> </a>
+                    <!-- <a href="settings.html"  class="hasnotifications nav-link"><img src="assets/img/icons/setting-icon-01.svg" alt=""> </a> -->
+                </li>
+            </ul>
+            <div class="dropdown mobile-user-menu float-end">
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+                    <a class="dropdown-item" href="settings.html">Settings</a>
+                    <a class="dropdown-item" href="../index.html">Logout</a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="menu-title">Main</li>
+						<li>
+							<a  href="index.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-01.svg" alt=""></span> <span> Dashboard </span> </a>
+						</li>
+						<li class="submenu">
+							<a class="active" href="#"><span class="menu-side"><img src="assets/img/icons/menu-icon-03.svg" alt=""></span> <span>Customer </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+								<li><a class="active" href="patients.html">Customers List</a></li>
+								<li><a href="add-patient.html">Add Customer</a></li>
+								<li><a href="edit-patient.html">Edit Customer</a></li>
+							</ul>
+						</li>
+						<li class="submenu">
+							<a href="#"><span class="menu-side"><img src="assets/img/icons/menu-icon-04.svg" alt=""></span> <span> Approved </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+								<li><a href="appointments.html">Approved List</a></li>
+								<li><a href="patient-profile.html">Customer Profile</a></li>
+
+							</ul>
+						</li>
+						<li class="submenu">
+							<a href="#"><span class="menu-side"><img src="assets/img/icons/menu-icon-07.svg" alt=""></span> <span> Accounts </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+								<li><a href="invoices.html">Invoices</a></li>
+							</ul>
+						</li>
+                        <li class="submenu">
+                            <a href="#"><span class="menu-side"><img src="assets/img/icons/menu-icon-12.svg" alt=""></span> <span> Email</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="compose.html">Compose Mail</a></li>
+                                <li><a href="inbox.html">Inbox</a></li>
+                                <li><a href="mail-view.html">Mail View</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><span class="menu-side"><img src="assets/img/icons/menu-icon-13.svg" alt=""></span> <span> Blog</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="blog-details.html">Blog View</a></li>
+                                <li><a href="add-blog.html">Add Blog</a></li>
+                                <li><a href="edit-blog.html">Edit Blog</a></li>
+                            </ul>
+                        </li>
+						<li class="submenu">
+							<a href="#"><i class="fa fa-flag"></i> <span> Reports </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+								<li><a href="invoice-reports.html"> Invoice Report </a></li>
+							</ul>
+						</li>
+                        <li class="submenu">
+							<a href="#"><span class="menu-side"><img src="assets/img/icons/menu-icon-15.svg" alt=""></span> <span> Invoice </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+								<li><a href="invoices-list.html"> Invoices List </a></li>
+								<li><a href="invoices-grid.html"> Invoices Grid</a></li>
+								<li><a href="add-invoice.html"> Add Invoices</a></li>
+								<li><a href="edit-invoices.html"> Edit Invoices</a></li>
+								<li><a href="view-invoice.html"> Invoices Details</a></li>
+							</ul>
+						</li>
+						<li>
+                            <a href="calendar.html"><i class="fa fa-calendar"></i> <span>Calendar</span></a>
+                        </li>
+                        
+                        
+                        
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-columns"></i> <span>Pages</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="lock-screen.html"> Lock Screen </a></li>
+                                <li><a href="profile.html"> Profile </a></li>
+                                <li><a href="gallery.html"> Gallery </a></li>
+                                <li><a href="error-404.html">404 Error </a></li>
+                                <li><a href="error-500.html">500 Error </a></li>
+                                <li><a href="blank-page.html"> Blank Page </a></li>
+                            </ul>
+                        </li>
+                     
+                    </ul>
+					<div class="logout-btn">
+						<a href="../index.html"><span class="menu-side"><img src="assets/img/icons/logout.svg" alt=""></span> <span>Logout</span></a>
+					</div>
+                </div>
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="content">
+			
+				<!-- Page Header -->
+				<div class="page-header">
+					<div class="row">
+						<div class="col-sm-12">
+							<ul class="breadcrumb">
+								<li class="breadcrumb-item"><a href="patients.html">Customers </a></li>
+								<li class="breadcrumb-item"><i class="feather-chevron-right"></i></li>
+								<li class="breadcrumb-item active">Customers List</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /Page Header -->
+				
+				<div class="row">
+					<div class="col-sm-12">
+					
+						<div class="card card-table show-entire">
+							<div class="card-body">
+							
+								<!-- Table Header -->
+								<div class="page-table-header mb-2">
+									<div class="row align-items-center">
+										<div class="col">
+											<div class="doctor-table-blk">
+												<h3>Customers</h3>
+												<div class="doctor-search-blk">
+													<div class="top-nav-search table-search-blk">
+														<form>
+															<input type="text" class="form-control" id="Search" onkeyup="search()" placeholder="Search here by Name or Phone Number">
+															<a class="btn"><img src="assets/img/icons/search-normal.svg" alt=""></a>
+														</form>
+													</div>
+													<div class="add-group">
+														<a href="add-patient.html" class="btn btn-primary add-pluss ms-2"><img src="assets/img/icons/plus.svg" alt=""></a>
+														<a href="#" onclick="window.location.reload(true);" class="btn btn-primary doctor-refresh ms-2"><img src="assets/img/icons/re-fresh.svg" alt=""></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-auto text-end float-end ms-auto download-grp">
+											<a class=" me-2" onclick="Download()"><img src="assets/img/icons/pdf-icon-01.svg" alt=""></a>
+											<!-- <a href="#" class=" me-2"><img src="assets/img/icons/pdf-icon-02.svg" alt=""></a>
+											<a href="javascript:;" class=" me-2"><img src="assets/img/icons/pdf-icon-03.svg" alt=""></a> -->
+											<a onclick="ExportToExcel()" ><img src="assets/img/icons/pdf-icon-04.svg" alt=""></a>
+											
+										</div>
+									</div>
+								</div>
+								<!-- /Table Header -->
+								
+								<div class="table-responsive">
+									<table id="table" class="table table-hover border-0 custom-table comman-table mb-0">
+										<thead>
+											<tr>
+												<th>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</th>
+												<th>Sr. No.</th>
+												<th>Name</th>
+												<th>Phone Number</th>
+												<th>Email</th>
+												<th>Address</th>
+												<th>Insurance</th>
+												<th>Date & Time</th>
+												<th>Other Info.</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody id="tbody">
+											<!-- <tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td class="profile-image"><a href="profile.html"><img width="28" height="28" src="assets/img/profiles/avatar-01.jpg" class="rounded-circle m-r-5" alt=""> Andrea Lalema</a></td>
+												<td>Otolaryngology</td>
+												<td>Infertility</td>
+												<td>MBBS, MS</td>
+												<td><a href="javascript:;">+1 23 456890</a></td>
+												<td><a href="https://preclinic.dreamstechnologies.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1c79647d716c70795c79717d7570327f7371">[email&#160;protected]</a></td>
+												<td>01.10.2022</td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-patient.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_patient"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td class="profile-image"><a href="profile.html"><img width="28" height="28" src="assets/img/profiles/avatar-02.jpg" class="rounded-circle m-r-5" alt="">Smith Bruklin</a></td>
+												<td>Urology</td>
+												<td>Prostate</td>
+												<td>MBBS, MS</td>
+												<td><a href="javascript:;">+1 23 456890</a></td>
+												<td><a href="https://preclinic.dreamstechnologies.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a5c0ddc4c8d5c9c0e5c0c8c4ccc98bc6cac8">[email&#160;protected]</a></td>
+												<td>01.10.2022</td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-patient.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_patient"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td class="profile-image"><a href="profile.html"><img width="28" height="28" src="assets/img/profiles/avatar-03.jpg" class="rounded-circle m-r-5" alt=""> William Stephin</a></td>
+												<td>Radiology</td>
+												<td>Cancer</td>
+												<td>MBBS, MS</td>
+												<td><a href="javascript:;">+1 23 456890</a></td>
+												<td><a href="https://preclinic.dreamstechnologies.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="24415c4549544841644149454d480a474b49">[email&#160;protected]</a></td>
+												<td>01.10.2022</td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-patient.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_patient"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td class="profile-image"><a href="profile.html"><img width="28" height="28" src="assets/img/profiles/avatar-04.jpg" class="rounded-circle m-r-5" alt=""> Bernardo James</a></td>
+												<td>Dentist</td>
+												<td>Prostate</td>
+												<td>MBBS, MS</td>
+												<td><a href="javascript:;">+1 23 456890</a></td>
+												<td><a href="https://preclinic.dreamstechnologies.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="214459404c514d4461444c40484d0f424e4c">[email&#160;protected]</a></td>
+												<td>01.10.2022</td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-patient.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_patient"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td class="profile-image"><a href="profile.html"><img width="28" height="28" src="assets/img/profiles/avatar-06.jpg" class="rounded-circle m-r-5" alt="">Cristina Groves</a></td>
+												<td>Gynocolgy</td>
+												<td>Prostate</td>
+												<td>MBBS, MS</td>
+												<td><a href="javascript:;">+1 23 456890</a></td>
+												<td><a href="https://preclinic.dreamstechnologies.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c39243d312c30391c39313d3530723f3331">[email&#160;protected]</a></td>
+												<td>01.10.2022</td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-patient.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_patient"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td class="profile-image"><a href="profile.html"><img width="28" height="28" src="assets/img/profiles/avatar-05.jpg" class="rounded-circle m-r-5" alt=""> Mark Hay Smith</a></td>
+												<td>Gynocolgy</td>
+												<td>Prostate</td>
+												<td>MBBS, MS</td>
+												<td><a href="javascript:;">+1 23 456890</a></td>
+												<td><a href="https://preclinic.dreamstechnologies.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="62071a030f120e0722070f030b0e4c010d0f">[email&#160;protected]</a></td>
+												<td>01.10.2022</td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-patient.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_patient"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td class="profile-image"><a href="profile.html"><img width="28" height="28" src="assets/img/profiles/avatar-01.jpg" class="rounded-circle m-r-5" alt=""> Andrea Lalema</a></td>
+												<td>Otolaryngology</td>
+												<td>Infertility</td>
+												<td>MBBS, MS</td>
+												<td><a href="javascript:;">+1 23 456890</a></td>
+												<td><a href="https://preclinic.dreamstechnologies.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a9ccd1c8c4d9c5cce9ccc4c8c0c587cac6c4">[email&#160;protected]</a></td>
+												<td>01.10.2022</td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-patient.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_patient"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td class="profile-image"><a href="profile.html"><img width="28" height="28" src="assets/img/profiles/avatar-02.jpg" class="rounded-circle m-r-5" alt="">Smith Bruklin</a></td>
+												<td>Urology</td>
+												<td>Prostate</td>
+												<td>MBBS, MS</td>
+												<td><a href="javascript:;">+1 23 456890</a></td>
+												<td><a href="https://preclinic.dreamstechnologies.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ceabb6afa3bea2ab8eaba3afa7a2e0ada1a3">[email&#160;protected]</a></td>
+												<td>01.10.2022</td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-patient.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_patient"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr> -->
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>							
+					</div>					
+				</div>
+            </div>
+            <div class="notification-box">
+                <div class="msg-sidebar notifications msg-noti">
+                    <div class="topnav-dropdown-header">
+                        <span>Messages</span>
+                    </div>
+                    <div class="drop-scroll msg-list-scroll" id="msg_list">
+                    </div>
+                    <div class="topnav-dropdown-footer">
+                        <a href="#">See all messages</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div id="delete_patient" class="modal fade delete-modal" role="dialog">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body text-center">
+						<img src="assets/img/sent.png" alt="" width="50" height="46">
+						<h3>Are you sure want to delete this ?</h3>
+						<div class="m-t-20"> <a href="#" class="btn btn-white" data-bs-dismiss="modal">Close</a>
+							<button type="submit" class="btn btn-danger" id="delete">Delete</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+    </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+
+	<script src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>
+	<script>
+		
+        var firebaseConfig = {
+            apiKey: "AIzaSyDt_Fj3J-kixtXeTj3cKNLulyuDDPDKWys",
+            authDomain: "insurance-f28df.firebaseapp.com",
+            projectId: "insurance-f28df",
+            storageBucket: "insurance-f28df.appspot.com",
+            messagingSenderId: "838660135539",
+            appId: "1:838660135539:web:8ac502243554407e492806"
+        };
+
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+   		 Show()
+			var count=0
+		 function Logo()
+		 {
+			if(count==0)
+			{
+				document.getElementById("Logo").style.display="none"
+				count=count+1
+			}
+			else
+			{
+				window.location.reload()
+			}
+		 }
+		function Show()
+        {
+            document.getElementById("tbody").innerHTML=""
+            firebase.database().ref("/Inquiry/").on("value",function(snap)
+            {
+                Obj=snap.val()
+				if(Obj==null)
+				{
+					document.getElementById("tbody").innerHTML=""
+           			row3=document.createElement("tr")
+            		td=document.createElement("td")
+            		td.innerHTML="No Record Found"
+          			td.colSpan="12"
+          			td.style.fontSize="24px"
+					td.style.fontWeight="500"
+					td.style.textAlign="center"
+          			row3.append(td)
+         			document.getElementById("tbody").append(row3)
+				}
+				else
+				{
+				Allkey=Object.keys(Obj)
+				document.getElementById("tbody").innerHTML=""
+                Allkey.reverse().map(function(key,index)
+                {
+				    Table(Obj[key].Name,Obj[key].Phone,Obj[key].Email,Obj[key].Address,Obj[key].Type,Obj[key].Timing,Obj[key].Rc,Obj[key].Status,index,key)
+                            
+                })
+                }
+				})
+				}
+        function Table(name,phone,email,address,type,timing,rc,status,index,key)
+        {
+           	   index=index+1
+           	   var row= document.createElement("tr")
+			   var cell0= document.createElement("td")
+           	   var cell= document.createElement("td")
+               var cell1= document.createElement("td")
+               var cell2= document.createElement("td")
+               var cell3= document.createElement("td")
+               var cell4= document.createElement("td")
+               var cell5= document.createElement("td")
+               var cell6= document.createElement("td")
+               var cell7= document.createElement("td")
+			   var cell8= document.createElement("td")
+
+
+
+			   var check=document.createElement("div")
+				check.className="form-check check-tables"
+				cell0.append(check)
+
+				var input=document.createElement("input")
+				input.type="checkbox"
+				input.checked=true
+				input.value="something"
+				input.className="form-check-input"
+				check.append(input)
+				
+
+
+               cell.innerHTML=index
+               cell1.innerHTML=name
+               cell2.innerHTML=phone
+               cell3.innerHTML=email
+               cell4.innerHTML=address
+               cell5.innerHTML=type
+			   cell7.innerHTML=rc
+
+
+			    btn=document.createElement("button")
+				btn.className="custom-badge status-orange"
+				btn.innerHTML=timing
+				cell6.append(btn)
+
+
+
+				if(status!="Approved")
+				{
+					input.checked=false
+
+					cell8.className="text-end"
+				var first=document.createElement("div")
+				first.className="dropdown dropdown-action"
+				var a=document.createElement("a")
+				a.className="action-icon dropdown-toggle"
+				a.setAttribute("data-bs-toggle","dropdown")
+				a.setAttribute("aria-expanded",false)
+
+				var i=document.createElement("i")	
+				i.className="fa fa-ellipsis-v"								
+					
+				
+				var block=document.createElement("div")
+				block.className="dropdown-menu dropdown-menu-end"
+
+				var a1=document.createElement("a")
+				a1.className="dropdown-item btn"
+				a1.id=key
+				a1.setAttribute("onclick","Edit(this)")
+				a1.innerHTML="Edit    "
+
+				var i1=document.createElement("i")	
+				i1.className="fa-solid fa-pen-to-square m-r-5"
+				a1.append(i1)
+				
+
+
+
+				var a2=document.createElement("a")
+				a2.className="dropdown-item btn"
+				a2.innerHTML="Delete"
+				a2.setAttribute("data-bs-toggle","modal")
+				a2.setAttribute("data-bs-target","#delete_patient")
+				a2.setAttribute("onclick","Del(this)")
+				a2.id=key
+
+				var i2=document.createElement("i")	
+				i2.className="fa fa-trash-alt m-r-5"
+				a2.append(i2)
+
+
+
+				var a3=document.createElement("a")
+				a3.className="dropdown-item btn"
+			    a3.innerHTML="Approve"
+				a3.id=key
+				a3.setAttribute("onclick","Approve(this)")
+
+
+				var a4=document.createElement("a")
+				a4.className="dropdown-item btn"
+				a4.innerHTML="View"
+				a4.id=key
+				a4.setAttribute("onclick","View(this)")
+
+										
+				block.append(a1)
+				block.append(a2)
+				block.append(a3)
+				block.append(a4)								
+				a.append(i)
+				first.append(a)
+				first.append(block)
+				cell8.append(first)
+
+				}
+
+			   
+				row.append(cell0)
+                row.append(cell)
+                row.append(cell1)
+                row.append(cell2)
+                row.append(cell3)
+                row.append(cell4)
+                row.append(cell5)
+                row.append(cell6)
+                row.append(cell7)
+				row.append(cell8)
+               document.getElementById("tbody").append(row)
+			   localStorage.clear()
+        }
+		function Download()
+        {
+            table=document.getElementById("table")
+            var opt = {
+                margin: 0.5,
+                filename: 'table.pdf',
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { scale: 1},
+                jsPDF: { unit: 'in', format: 'legal', orientation: 'landscape' }
+            };
+           html2pdf().from(table).set(opt).save()
+        }
+		function ExportToExcel(type, fn, dl) {
+       var elt = document.getElementById('table');
+       var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+       return dl ?
+         XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }):
+         XLSX.writeFile(wb, fn || ('MySheetName.' + (type || 'xlsx')));
+    }
+		function Approve(Obutton)
+	{
+		firebase.database().ref().child(`Inquiry/${Obutton.id}`).update({Status:"Approved"},err=>{
+		 			if(err)
+					{
+		 				alert("Error Occured. Try again later")
+		 			}
+		 			else
+		 			{
+		 				alert("Customer Approved")
+		 				window.location.reload()
+		 			}
+		 		})
+	}
+		function Del(Obutton)
+		{
+			Delete=document.querySelector("#delete")
+			Delete.addEventListener("click",function()
+			{
+				firebase.database().ref().child(`Inquiry/${Obutton.id}`).remove(err=>{
+					if(err)
+					{
+						alert("Some Error Occured. Please Try again later")
+					}
+					else
+					{
+						window.location.reload()
+						alert("Selected Inquiry Deleted")
+					}
+				})
+			})
+		}
+		function View(Obutton)
+		{
+			localStorage.setItem("View",JSON.stringify(Obutton.id))
+			window.location.href="patient-profile.html"
+		}
+
+		function Edit(Obutton)
+		{
+			localStorage.setItem("Edited",JSON.stringify(Obutton.id))
+			window.location.href="edit-patient.html"
+		}
+		function search() {
+            var Search = document.getElementById("Search").value
+            firebase.database().ref('/Inquiry/').on("value", function (AllObj) {
+                Obj = AllObj.val()
+                if (Obj == null) {
+                    alert("No data found")
+                }
+                else {
+                    if (Search == "") {
+                        Show()
+                    }
+                    else {
+                        document.getElementById("tbody").innerHTML = ""
+                        KeyArr = Object.keys(Obj)
+                        KeyArr.reverse().map(function (key, index) {
+                            if (Obj[key].Phone.match(Search) || Obj[key].Name.match(Search)) {
+								Table(Obj[key].Name,Obj[key].Phone,Obj[key].Email,Obj[key].Address,Obj[key].Type,Obj[key].Timing,Obj[key].Rc,Obj[key].Status,index,key)
+                            }
+
+                        })
+                    }
+                }
+            })
+        }
+
+	</script>
+
+
+
+
+    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-3.6.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/feather.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+	<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="assets/plugins/datatables/datatables.min.js"></script>
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+
+<!-- Mirrored from preclinic.dreamstechnologies.com/template/patients.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Oct 2023 15:17:15 GMT -->
+</html>

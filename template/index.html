@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from preclinic.dreamstechnologies.com/template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Oct 2023 15:15:45 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/A2Z-removebg-preview.png">
+    <title>A2Z Solutions - Insurance Advisor</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	
+	<!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+	
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
+	
+	<!-- Datatables CSS -->
+	<link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css">
+	
+	<!-- Feathericon CSS -->
+	<link rel="stylesheet" href="assets/plugins/feather/feather.css">
+	
+	<!-- Main CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+     
+</head>
+
+<body>
+    <div class="main-wrapper">
+		<div class="header">
+			<div class="header-left">
+				<a href="index.html" class="logo">
+					<img src="../wp-content/uploads/sites/360/2023/03/logo-insurify.png" id="Logo" width="170" height="80" alt="">
+				</a>
+			</div>
+			<a id="toggle_btn" href="javascript:void(0);" onclick="Logo()"><img src="assets/img/icons/bar-icon.svg"  alt=""></a>
+            <a id="mobile_btn" class="mobile_btn float-start" href="#sidebar"><img src="assets/img/icons/bar-icon.svg"  alt=""></a>
+			<div class="top-nav-search mob-view">
+				<form>
+					<input type="text" class="form-control" placeholder="Search here">
+					<a class="btn" ><img src="assets/img/icons/search-normal.svg" alt=""></a>
+				</form>
+			</div>
+            <ul class="nav user-menu float-end">
+                <li class="nav-item dropdown d-none d-md-block">
+                    <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown"><img src="assets/img/icons/note-icon-02.svg" alt=""><span class="pulse"></span> </a>
+                    <div class="dropdown-menu notifications">
+                        <div class="topnav-dropdown-header">
+                            <span>Notifications</span>
+                        </div>
+                        <div class="drop-scroll">
+                            <!-- <ul class="notification-list">
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media">
+											<span class="avatar">
+												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid">
+											</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
+												<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media">
+											<span class="avatar">V</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
+												<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media">
+											<span class="avatar">L</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
+												<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media">
+											<span class="avatar">G</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
+												<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media">
+											<span class="avatar">V</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span class="noti-title">Private chat module</span></p>
+												<p class="noti-time"><span class="notification-time">2 days ago</span></p>
+											</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul> -->
+                        </div>
+                        <div class="topnav-dropdown-footer">
+                            <a href="#">View all Notifications</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown d-none d-md-block">
+                    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><img src="assets/img/icons/note-icon-01.svg" alt=""><span class="pulse"></span> </a>
+                </li>
+				<li class="nav-item dropdown has-arrow user-profile-list">
+                    <a href="#" class="dropdown-toggle nav-link user-link" data-bs-toggle="dropdown">
+						<div class="user-names">
+							<h5>Sudhir Bhayana</h5>
+                        	<span>Admin</span>
+						</div>
+						<span class="user-img">
+							<img  src="../wp-content/uploads/sites/360/2023/03/Advisor.jpg"  alt="Admin">
+						</span>
+                    </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="profile.html">My Profile</a>
+						<a class="dropdown-item" href="javascript:alert('You are not allowed to Edit. Please Contact to Developer')">Edit Profile</a>
+						<!-- <a class="dropdown-item" href="edit-profile.html">Edit Profile</a> -->
+						<a class="dropdown-item" href="javascript:alert('Website is under progress. Contact to developer')">Settings</a>
+						<!-- <a class="dropdown-item" href="settings.html">Settings</a> -->
+						<a class="dropdown-item" href="../index.html">Logout</a>
+					</div>
+                </li>
+				<li class="nav-item ">
+					<a href="javascript:alert('Website is under progress. Contact to developer')" class="hasnotifications nav-link"><img src="assets/img/icons/setting-icon-01.svg" alt=""> </a>
+                    <!-- <a href="settings.html"  class="hasnotifications nav-link"><img src="assets/img/icons/setting-icon-01.svg" alt=""> </a> -->
+                </li>
+            </ul>
+            <div class="dropdown mobile-user-menu float-end">
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+                    <a class="dropdown-item" href="settings.html">Settings</a>
+                    <a class="dropdown-item" href="../index.html">Logout</a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="menu-title">Main</li>
+						<li>
+							<a class="active" href="index.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-01.svg" alt=""></span> <span> Dashboard </span> </a>
+						</li>
+						<li class="submenu">
+							<a href="#"><span class="menu-side"><img src="assets/img/icons/menu-icon-03.svg" alt=""></span> <span>Customer </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+								<li><a href="patients.html">Customers List</a></li>
+								<li><a href="add-patient.html">Add Customer</a></li>
+								<li><a href="edit-patient.html">Edit Customer</a></li>
+								
+							</ul>
+						</li>
+						<li class="submenu">
+							<a href="#"><span class="menu-side"><img src="assets/img/icons/menu-icon-04.svg" alt=""></span> <span> Approved </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+								<li><a href="appointments.html">Approved List</a></li>
+								<li><a href="patient-profile.html">Customer Profile</a></li>
+							</ul>
+						</li>
+						<li class="submenu">
+							<a href="#"><span class="menu-side"><img src="assets/img/icons/menu-icon-07.svg" alt=""></span> <span> Accounts </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+								<li><a href="invoices.html">Invoices</a></li>
+							</ul>
+						</li>
+                        <li class="submenu">
+                            <a href="#"><span class="menu-side"><img src="assets/img/icons/menu-icon-12.svg" alt=""></span> <span> Email</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="compose.html">Compose Mail</a></li>
+                                <li><a href="inbox.html">Inbox</a></li>
+                                <li><a href="mail-view.html">Mail View</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><span class="menu-side"><img src="assets/img/icons/menu-icon-13.svg" alt=""></span> <span> Blog</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="blog-details.html">Blog View</a></li>
+                                <li><a href="add-blog.html">Add Blog</a></li>
+                                <li><a href="edit-blog.html">Edit Blog</a></li>
+                            </ul>
+                        </li>
+						<li class="submenu">
+							<a href="#"><i class="fa fa-flag"></i> <span> Reports </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+								<li><a href="invoice-reports.html"> Invoice Report </a></li>
+							</ul>
+						</li>
+                        <li class="submenu">
+							<a href="#"><span class="menu-side"><img src="assets/img/icons/menu-icon-15.svg" alt=""></span> <span> Invoice </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+								<li><a href="invoices-list.html"> Invoices List </a></li>
+								<li><a href="invoices-grid.html"> Invoices Grid</a></li>
+								<li><a href="add-invoice.html"> Add Invoices</a></li>
+								<li><a href="edit-invoices.html"> Edit Invoices</a></li>
+								<li><a href="view-invoice.html"> Invoices Details</a></li>
+							</ul>
+						</li>
+						<li>
+                            <a href="calendar.html"><i class="fa fa-calendar"></i> <span>Calendar</span></a>
+                        </li>
+                        
+                        
+                        
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-columns"></i> <span>Pages</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="lock-screen.html"> Lock Screen </a></li>
+                                <li><a href="profile.html"> Profile </a></li>
+                                <li><a href="gallery.html"> Gallery </a></li>
+                                <li><a href="error-404.html">404 Error </a></li>
+                                <li><a href="error-500.html">500 Error </a></li>
+                                <li><a href="blank-page.html"> Blank Page </a></li>
+                            </ul>
+                        </li>
+                     
+                    </ul>
+					<div class="logout-btn">
+						<a href="../index.html"><span class="menu-side"><img src="assets/img/icons/logout.svg" alt=""></span> <span>Logout</span></a>
+					</div>
+                </div>
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="content">
+			
+				<!-- Page Header -->
+				<div class="page-header">
+					<div class="row">
+						<div class="col-sm-12">
+							<ul class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html">Dashboard </a></li>
+								<!-- <li class="breadcrumb-item"><i class="feather-chevron-right"></i></li> -->
+								<!-- <li class="breadcrumb-item active">Admin Dashboard</li> -->
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /Page Header -->
+				
+				<div class="good-morning-blk">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="morning-user">
+								<h2>Good Morning, <span>Sudhir Bhayana</span></h2>
+								<p>Have a nice day at work</p>
+							</div>
+						</div>
+						<div class="col-md-6 position-blk">
+							<div class="morning-img">
+								<img src="assets/img/morning-img-01.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+				
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                        <div class="dash-widget">
+							<div class="dash-boxs comman-flex-center">
+								<img src="assets/img/icons/calendar.svg" alt="">
+							</div>
+							<div class="dash-content dash-count">
+								<h4>All Time</h4>
+								<h2 id="counter-up1"><span class="counter-up"></span></h2>
+								<p><span class="passive-view"><i class="feather-arrow-up-right me-1"></i>40%</span> vs last month</p>
+							</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                        <div class="dash-widget">
+							<div class="dash-boxs comman-flex-center">
+								<img src="assets/img/icons/profile-add.svg" alt="">
+							</div>
+							<div class="dash-content dash-count">
+								<h4>This Month</h4>
+								<h2 id="counter-up2"><span class="counter-up" ></span></h2>
+								<p><span class="passive-view"><i class="feather-arrow-up-right me-1"></i>20%</span> vs last month</p>
+							</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                        <div class="dash-widget">
+							<div class="dash-boxs comman-flex-center">
+								<img src="assets/img/icons/scissor.svg" alt="">
+							</div>
+							<div class="dash-content dash-count">
+								<h4>Approved</h4>
+								<h2 id="counter-up3"><span class="counter-up" ></span></h2>
+								<p><span class="negative-view"><i class="feather-arrow-down-right me-1"></i>15%</span> vs last month</p>
+							</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                        <div class="dash-widget">
+							<div class="dash-boxs comman-flex-center">
+								<img src="assets/img/icons/empty-wallet.svg" alt="">
+							</div>
+							<div class="dash-content dash-count">
+								<h4>Today</h4>
+								<h2 id="counter-up4"><span class="counter-up"></span></h2>
+								<p><span class="passive-view"><i class="feather-arrow-up-right me-1"></i>30%</span> vs last month</p>
+							</div>
+                        </div>
+                    </div>
+                </div>
+				<div class="row">
+					<div class="col-12 col-md-12 col-lg-6 col-xl-9">
+						<div class="card">
+							<div class="card-body">
+								<div class="chart-title patient-visit">
+									<h4>Your Data</h4>
+									<div >
+										<ul class="nav chat-user-total">
+											<li><i class="fa fa-circle current-users" aria-hidden="true"></i>Approved 75%</li>
+											<li><i class="fa fa-circle old-users" aria-hidden="true"></i>Not Approved 25%</li>
+										</ul>
+									</div>
+									<div class="form-group mb-0">
+										<select class="form-control select">
+											<option>2023</option>
+											<option>2022</option>
+											<option>2021</option>
+											<option>2020</option>
+										</select>
+									</div>
+								</div>	
+								<div id="patient-chart"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-12 col-lg-6 col-xl-3 d-flex">
+						<div class="card">
+							<div class="card-body">
+								<div class="chart-title">
+									<h4>Overall</h4>
+								</div>	
+								<div id="donut-chart-dash" class="chart-user-icon">
+									<img src="assets/img/icons/user-icon.svg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="row">
+					<div class="col-12 col-md-12  col-xl-4">
+                        <div class="card top-departments">
+							<div class="card-header">
+								<h4 class="card-title mb-0">Top Departments</h4>
+							</div>
+                            <div class="card-body">
+                                <div class="activity-top">
+									<div class="activity-boxs comman-flex-center">
+										<img src="assets/img/icons/dep-icon-01.svg" alt="">
+									</div>
+									<div class="departments-list">
+										<h4>General Physician</h4>
+										<p>35%</p>
+									</div>
+								</div>
+								<div class="activity-top">
+									<div class="activity-boxs comman-flex-center">
+										<img src="assets/img/icons/dep-icon-02.svg" alt="">
+									</div>
+									<div class="departments-list">
+										<h4>Dentist</h4>
+										<p>24%</p>
+									</div>
+								</div>
+								<div class="activity-top">
+									<div class="activity-boxs comman-flex-center">
+										<img src="assets/img/icons/dep-icon-03.svg" alt="">
+									</div>
+									<div class="departments-list">
+										<h4>ENT</h4>
+										<p>10%</p>
+									</div>
+								</div>
+								<div class="activity-top">
+									<div class="activity-boxs comman-flex-center">
+										<img src="assets/img/icons/dep-icon-04.svg" alt="">
+									</div>
+									<div class="departments-list">
+										<h4>Cardiologist</h4>
+										<p>15%</p>
+									</div>
+								</div>
+								<div class="activity-top mb-0">
+									<div class="activity-boxs comman-flex-center">
+										<img src="assets/img/icons/dep-icon-05.svg" alt="">
+									</div>
+									<div class="departments-list">
+										<h4>Opthomology</h4>
+										<p>20%</p>
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-12 col-md-12  col-xl-8">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="card-title d-inline-block">Upcoming Appointments</h4> <a href="appointments.html" class="patient-views float-end">Show all</a>
+							</div>
+							<div class="card-body p-0 table-dash">
+								<div class="table-responsive">
+									<table class="table mb-0 border-0 datatable custom-table">
+										<thead>
+											<tr>
+												<th>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</th>
+												<th>No</th>
+												<th>Patient name</th>
+												<th>Doctor</th>
+												<th>Time</th>
+												<th>Disease</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td>R00001</td>
+												<td>Andrea Lalema</td>
+												<td class="table-image appoint-doctor">
+													<img width="28" height="28" class="rounded-circle" src="assets/img/profiles/avatar-02.jpg" alt=""> 
+													<h2>Dr.Jenny Smith</h2>
+												</td>
+												<td class="appoint-time"><span>12.05.2022 at </span>7.00 PM</td>
+												<td><button class="custom-badge status-green ">Fracture</button></td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-appointment.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_appointment"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td>R00002</td>
+												<td>Cristina Groves</td>
+												<td class="table-image appoint-doctor">
+													<img width="28" height="28" class="rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt=""> 
+													<h2>Dr.Angelica Ramos</h2>
+												</td>
+												<td class="appoint-time"><span>13.05.2022 at </span>7.00 PM</td>
+												<td><button class="custom-badge status-green">Fever</button></td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-appointment.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_appointment"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td>R00003</td>
+												<td>Bernardo </td>
+												<td class="table-image appoint-doctor">
+													<img width="28" height="28" class="rounded-circle" src="assets/img/profiles/avatar-04.jpg" alt=""> 
+													<h2>Dr.Martin Doe</h2>
+												</td>
+												<td class="appoint-time"><span>14.05.2022 at </span>7.00 PM</td>
+												<td><button class="custom-badge status-green">Fracture</button></td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-appointment.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_appointment"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td>R00004</td>
+												<td>Galaviz Lalema</td>
+												<td class="table-image appoint-doctor">
+													<img width="28" height="28" class="rounded-circle" src="assets/img/profiles/avatar-05.jpg" alt=""> 
+													<h2>Dr.William Jerk</h2>
+												</td>
+												<td class="appoint-time"><span>15.05.2022 at </span>7.00 PM</td>
+												<td><button class="custom-badge status-green">Fracture</button></td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-appointment.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_appointment"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td>R00005</td>
+												<td>Cristina Groves</td>
+												<td class="table-image appoint-doctor">
+													<img width="28" height="28" class="rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt=""> 
+													<h2>Dr.Angelica Ramos</h2>
+												</td>
+												<td class="appoint-time"><span>16.05.2022 at </span>7.00 PM</td>
+												<td><button class="custom-badge status-green">Fever</button></td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-appointment.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_appointment"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> -->
+				<div class="row">
+					<div class="col-12 col-xl-12">
+						<div class="card">
+							<div class="card-header pb-0">
+								<h4 class="card-title d-inline-block">Today's Inqueries</h4> <a href="patients.html" class="float-end patient-views">show all</a>
+							</div>
+							<div class="card-block table-dash">
+								<div class="table-responsive">
+									<table class="table mb-0 border-0 datatable custom-table">
+										<thead>
+											<tr>
+												<th>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</th>
+												<th>Sr.No</th>
+												<th>Name</th>
+												<th>Phone Number</th>
+												<th>Email</th>
+												<th>Address</th>
+												<th>Insurance Type</th>
+												<th>Date & Time</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody id="tbody">
+										<!--	 <tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td>1</td>
+												<td class="table-image">
+													<img width="28" height="28" class="rounded-circle" src="assets/img/profiles/avatar-02.jpg" alt=""> 
+													<h2>Jayant Arora</h2>
+												</td>
+												<td>9306667393</td>
+												<td>Anshua101a@gmail.com</td>
+												<td>Life</td>
+												<td><button class="custom-badge status-green ">Non Urgent</button></td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-patient.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_appointment"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td>R00002</td>
+												<td class="table-image">
+													<img width="28" height="28" class="rounded-circle" src="assets/img/profiles/avatar-03.jpg" alt=""> 
+													<h2>Mark Hay Smith</h2>
+												</td>
+												<td>23</td>
+												<td>06 January 2002</td>
+												<td>Jaundice</td>
+												<td><button class="custom-badge status-pink">Emergency</button></td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-patient.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_appointment"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td>R00003</td>
+												<td class="table-image">
+													<img width="28" height="28" class="rounded-circle" src="assets/img/profiles/avatar-04.jpg" alt=""> 
+													<h2>Cristina Groves</h2>
+												</td>
+												<td>25</td>
+												<td>10 January 2002</td>
+												<td>Malaria</td>
+												<td><button class="custom-badge status-gray">Out Patient</button></td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-patient.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_appointment"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr> -->
+											<!-- <tr>
+												<td>
+													<div class="form-check check-tables">
+														<input class="form-check-input" type="checkbox" value="something">
+													</div>
+												</td>
+												<td>R00004</td>
+												<td class="table-image">
+													<img width="28" height="28" class="rounded-circle" src="assets/img/profiles/avatar-05.jpg" alt=""> 
+													<h2>Galaviz Lalema</h2>
+												</td>
+												<td>21</td>
+												<td>09 January 2002</td>
+												<td>Typhoid</td>
+												<td><button class="custom-badge status-orange">Non Urgent</button></td>
+												<td class="text-end">
+													<div class="dropdown dropdown-action">
+														<a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+														<div class="dropdown-menu dropdown-menu-end">
+															<a class="dropdown-item" href="edit-patient.html"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+															<a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_appointment"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+														</div>
+													</div>
+												</td>
+											</tr> -->
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+            <div class="notification-box">
+                <div class="msg-sidebar notifications msg-noti">
+                    <div class="topnav-dropdown-header">
+                        <span>Messages</span>
+                    </div>
+                    <div class="drop-scroll msg-list-scroll" id="msg_list">
+                        <!-- <ul class="list-box">
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">R</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Richard Miles </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item new-message">
+                                        <div class="list-left">
+                                            <span class="avatar">J</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">John Doe</span>
+                                            <span class="message-time">1 Aug</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">T</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Tarah Shropshire </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">M</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Mike Litorus</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">C</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Catherine Manseau </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">D</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Domenic Houston </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">B</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Buster Wigton </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">R</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Rolland Webber </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">C</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Claire Mapes </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">M</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Melita Faucher</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">J</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Jeffery Lalor</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">L</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Loren Gatlin</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">T</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Tarah Shropshire</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul> -->
+                    </div>
+                    <div class="topnav-dropdown-footer">
+                        <a href="#">See all messages</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>
+	<script>
+		
+        var firebaseConfig = {
+            apiKey: "AIzaSyDt_Fj3J-kixtXeTj3cKNLulyuDDPDKWys",
+            authDomain: "insurance-f28df.firebaseapp.com",
+            projectId: "insurance-f28df",
+            storageBucket: "insurance-f28df.appspot.com",
+            messagingSenderId: "838660135539",
+            appId: "1:838660135539:web:8ac502243554407e492806"
+        };
+
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+   		 Show()
+		 Data()
+		 var count=0
+		 function Logo()
+		 {
+			if(count==0)
+			{
+				document.getElementById("Logo").style.display="none"
+				count=count+1
+			}
+			else
+			{
+				window.location.reload()
+			}
+		 }
+		 function Data()
+		 {
+			firebase.database().ref().child("Inquiry").on("value",function(snap)
+			{
+				if(snap.val()!=null)
+				{
+					document.getElementById("counter-up1").innerHTML=Object.keys(snap.val()).length
+				}
+			})
+			firebase.database().ref().child("Inquiry").orderByChild("Status").equalTo("Approved").on("value",function(snap)
+			{
+				if(snap.val()!=null)
+				{
+					document.getElementById("counter-up3").innerHTML=Object.keys(snap.val()).length
+				}
+			})
+		 }
+		function Show()
+        {  
+            var d=new Date()
+            dd=d.getDate()
+            mm=d.getMonth()
+            yy=d.getFullYear()
+            firebase.database().ref("/Inquiry/").on("value",function(snap)
+            {
+				var month=0
+                Obj=snap.val()
+				if(Obj!=null)
+				{
+					Allkey=Object.keys(Obj)
+                 Data=Allkey.filter(function(keys)
+                {
+                    timing=Obj[keys].Timing
+                    arr=timing.split("&")
+                    date=arr[0].split("/")
+                    if(yy==date[2])
+                    {
+                        if(mm+1==date[1])
+                        {
+							month=month+1
+                             if(dd==date[0])
+							 {
+								return keys
+							 }
+                        }
+                    }
+                })
+				document.getElementById("counter-up2").innerHTML=month
+				if(Data!="")
+				{
+					document.getElementById("tbody").innerHTML=""
+					document.getElementById("counter-up4").innerHTML=Data.length
+					Data.reverse().map(function(key,index)
+					{
+						Table(Obj[key].Name,Obj[key].Phone,Obj[key].Email,Obj[key].Address,Obj[key].Type,Obj[key].Timing,Obj[key].Rc,index,key)
+					})
+				}
+				else
+				{
+					document.getElementById("tbody").innerHTML=""
+           			row3=document.createElement("tr")
+            		td=document.createElement("td")
+            		td.innerHTML="No Record Found"
+          			td.colSpan="12"
+          			td.style.fontSize="24px"
+					td.style.fontWeight="400"
+					td.style.textAlign="center"
+          			row3.append(td)
+         			document.getElementById("tbody").append(row3)
+				}
+				}
+            })
+        }
+        function Table(name,phone,email,address,type,timing,rc,index,key)
+        {
+           		 index=index+1
+           	   var row= document.createElement("tr")
+			   var cell0= document.createElement("td")
+           	   var cell= document.createElement("td")
+               var cell1= document.createElement("td")
+               var cell2= document.createElement("td")
+               var cell3= document.createElement("td")
+               var cell4= document.createElement("td")
+               var cell5= document.createElement("td")
+               var cell6= document.createElement("td")
+               var cell7= document.createElement("td")
+
+               cell.innerHTML=index
+               cell1.innerHTML=name
+               cell2.innerHTML=phone
+               cell3.innerHTML=email
+               cell4.innerHTML=address
+               cell5.innerHTML=type
+
+				var check=document.createElement("div")
+				check.className="form-check check-tables"
+				cell0.append(check)
+
+				var input=document.createElement("input")
+				input.type="checkbox"
+				input.value="something"
+				input.className="form-check-input"
+				check.append(input)
+
+				btn=document.createElement("button")
+				btn.className="custom-badge status-orange"
+				btn.innerHTML=timing
+				cell6.append(btn)
+
+				cell7.className="text-end"
+				var first=document.createElement("div")
+				first.className="dropdown dropdown-action"
+				var a=document.createElement("a")
+				a.className="action-icon dropdown-toggle"
+				a.setAttribute("data-bs-toggle","dropdown")
+				a.setAttribute("aria-expanded",false)
+				
+				var i=document.createElement("i")	
+				i.className="fa fa-ellipsis-v"								
+					
+				
+				var block=document.createElement("div")
+				block.className="dropdown-menu dropdown-menu-end"
+
+				var a1=document.createElement("a")
+				a1.className="dropdown-item"
+				a1.id=key
+				a1.setAttribute("onclick","Edit(this)")
+				a1.innerHTML="Edit    "
+
+				var i1=document.createElement("i")	
+				i1.className="fa-solid fa-pen-to-square m-r-5"
+				a1.append(i1)
+
+				var a2=document.createElement("a")
+				a2.className="dropdown-item"
+				a2.innerHTML="Delete"
+				a2.id=key
+				a2.setAttribute("onclick","Del(this)")
+
+				var i2=document.createElement("i")	
+				i2.className="fa fa-trash-alt m-r-5"
+				a2.append(i2)
+
+				block.append(a1)
+				block.append(a2)								
+				a.append(i)
+				first.append(a)
+				first.append(block)
+				cell7.append(first)
+				row.append(cell0)
+                row.append(cell)
+                row.append(cell1)
+                row.append(cell2)
+                row.append(cell3)
+                row.append(cell4)
+                row.append(cell5)
+                row.append(cell6)
+                row.append(cell7)
+               document.getElementById("tbody").append(row)
+			   localStorage.clear()
+        }
+		function Del(Obutton)
+		{
+			if(window.confirm("Do you want to delete this Inquiry?"))
+		{
+			firebase.database().ref().child(`Inquiry/${Obutton.id}`).remove(err=>{
+				if(err)
+				{
+					alert("Some Error Occured. Try again Later")
+				}
+				else
+				{
+					alert("Inquiry Deleted")
+				}
+			})
+		}
+		}
+		function Edit(Obutton)
+		{
+			localStorage.setItem("Edited",JSON.stringify(Obutton.id))
+			window.location.href="edit-patient.html"
+		}
+	</script>
+
+
+
+
+
+	
+	<!-- jQuery -->
+    <script src="assets/js/jquery-3.6.1.min.js"></script>
+	
+	<!-- Bootstrap Core JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+	
+	<!-- Feather Js -->
+	<script src="assets/js/feather.min.js"></script>
+	
+	<!-- Slimscroll -->
+    <script src="assets/js/jquery.slimscroll.js"></script>
+	
+	<!-- Select2 Js -->
+	<script src="assets/js/select2.min.js"></script>
+	
+	<!-- Datatables JS -->
+	<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="assets/plugins/datatables/datatables.min.js"></script>
+	
+	<!-- counterup JS -->
+	<script src="assets/js/jquery.waypoints.js"></script>
+	<script src="assets/js/jquery.counterup.min.js"></script>
+	
+	<!-- Apexchart JS -->
+	<script src="assets/plugins/apexchart/apexcharts.min.js"></script>
+	<script src="assets/plugins/apexchart/chart-data.js"></script>
+	
+	<!-- Custom JS -->
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+
+<!-- Mirrored from preclinic.dreamstechnologies.com/template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Oct 2023 15:16:34 GMT -->
+</html>
